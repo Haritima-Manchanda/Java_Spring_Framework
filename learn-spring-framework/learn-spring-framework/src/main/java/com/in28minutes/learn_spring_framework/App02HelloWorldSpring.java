@@ -1,21 +1,21 @@
 package com.in28minutes.learn_spring_framework;
 
-import com.in28minutes.learn_spring_framework.game.GameRunner;
-import com.in28minutes.learn_spring_framework.game.PacmanGame;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class App02HelloWorldSpring {
 
 	public static void main(String[] args) {
-//		var game = new MarioGame();
-//		var game = new SuperContraGame();
-		var game = new PacmanGame(); // 1. Object Creation
+		// 1. Launch a spring context
+		var context = new AnnotationConfigApplicationContext(HelloWorldConfiguration.class);
 		
-		var gameRunner = new GameRunner(game);
-		// 2. Object Creation & Wiring of Dependencies
-		// game is a dependency of GameRunner
+		// 2. Configure the things that we want spring to manage - 
+		// HelloWorldConfiguration - @Configuration
+		// name - @Bean
 		
-		gameRunner.run();
+		// Retrieving beans managed by spring
+		System.out.println(context.getBean("name"));
 		
 	}
+	
 
 }
