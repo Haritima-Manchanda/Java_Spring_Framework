@@ -34,8 +34,9 @@ public class HelloWorldConfiguration {
 		return person;
 	}
 	
-	// Bean to manage an object of a class
-	@Bean 
+	// Bean to manage an object of a class. By default the name of the bean is the name of the function
+	//	If we want to define a custom name then we can do that by -  
+	@Bean(name = "address2")
 	public Address address() {
 		var address = new Address("Baker Street", "London");
 		return address;

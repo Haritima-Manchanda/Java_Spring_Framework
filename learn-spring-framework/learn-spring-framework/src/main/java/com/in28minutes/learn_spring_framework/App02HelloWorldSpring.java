@@ -16,8 +16,9 @@ public class App02HelloWorldSpring {
 		System.out.println(context.getBean("name"));
 		System.out.println(context.getBean("age"));
 		System.out.println(context.getBean("person"));
-		System.out.println(context.getBean("address"));
+		System.out.println(context.getBean("address2"));
+		
+		//	We can also retrieve a bean by specifying the class type instead of name
+		System.out.println(context.getBean(Address.class));
 	}
-	
-
 }
