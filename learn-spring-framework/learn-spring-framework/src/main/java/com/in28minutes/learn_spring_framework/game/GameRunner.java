@@ -8,8 +8,13 @@ public class GameRunner {
 //		this.game = game;
 //	}
 
-	SuperContraGame game;
-	public GameRunner(SuperContraGame game) {
+//	SuperContraGame game;
+//	public GameRunner(SuperContraGame game) {
+//		this.game = game;
+//	}
+	
+	GamingConsole game;
+	public GameRunner(GamingConsole game) {
 		this.game = game;
 	}
 	
