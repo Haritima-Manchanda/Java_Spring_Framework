@@ -20,5 +20,7 @@ public class App02HelloWorldSpring {
 		
 		//	We can also retrieve a bean by specifying the class type instead of name
 		System.out.println(context.getBean(Address.class));
-	}
+		
+		// Retrieving beans created from other beans
+		System.out.println(context.getBean("person2MethodCall"));	}
 }

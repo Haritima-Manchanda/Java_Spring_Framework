@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 // record helps in eleminating verbosity in creating Java Beans
 // Public accessor methods, constructors, equals, hashcode, and toString methods
 // are automatically created. Released in JDK 16. 
-record Person (String name, int age) {};
+record Person (String name, int age, Address address) {};
 record Address (String firstLine, String city) {};
 
 
@@ -30,7 +30,14 @@ public class HelloWorldConfiguration {
 	// Bean to manage an object of a class
 	@Bean 
 	public Person person() {
-		var person = new Person("Ravi", 20);
+		var person = new Person("Ravi", 20, new Address("Main Street", "Utrecht"));
+		return person;
+	}
+	
+	// Bean created by using other beans
+	@Bean
+	public Person person2MethodCall() {
+		var person = new Person(name(), age(), address());
 		return person;
 	}
 	
