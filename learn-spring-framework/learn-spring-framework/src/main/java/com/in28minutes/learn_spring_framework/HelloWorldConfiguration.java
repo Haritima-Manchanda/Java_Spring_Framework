@@ -41,11 +41,25 @@ public class HelloWorldConfiguration {
 		return person;
 	}
 	
+	
+	@Bean
+	public Person person3Parameters(String name, int age, Address address3) {
+		// There ia a bean with name 'name', 'age', and 'address3'
+		var person = new Person(name, age, address3);
+		return person;
+	}
+	
 	// Bean to manage an object of a class. By default the name of the bean is the name of the function
 	//	If we want to define a custom name then we can do that by -  
 	@Bean(name = "address2")
 	public Address address() {
 		var address = new Address("Baker Street", "London");
+		return address;
+	}
+	
+	@Bean(name = "address3")
+	public Address address3() {
+		var address = new Address("Moti Nager", "Hyderabad");
 		return address;
 	}
 	
