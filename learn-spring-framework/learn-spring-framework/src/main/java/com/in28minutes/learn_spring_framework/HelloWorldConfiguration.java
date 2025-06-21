@@ -1,7 +1,9 @@
 package com.in28minutes.learn_spring_framework;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 // record helps in eleminating verbosity in creating Java Beans
 // Public accessor methods, constructors, equals, hashcode, and toString methods
@@ -49,15 +51,34 @@ public class HelloWorldConfiguration {
 		return person;
 	}
 	
+	
+	@Bean
+	@Primary
+	public Person person4Parameters(String name, int age, Address address) {
+		// There ia a bean with name 'name', 'age', and 'address3'
+		var person = new Person(name, age, address);
+		return person;
+	}
+	
+	@Bean
+	public Person person5Parameters(String name, int age, @Qualifier("address3Qualifier") Address address) {
+		// There ia a bean with name 'name', 'age', and 'address3'
+		var person = new Person(name, age, address);
+		return person;
+	}
+	
+	
 	// Bean to manage an object of a class. By default the name of the bean is the name of the function
 	//	If we want to define a custom name then we can do that by -  
 	@Bean(name = "address2")
+	@Primary
 	public Address address() {
 		var address = new Address("Baker Street", "London");
 		return address;
 	}
 	
 	@Bean(name = "address3")
+	@Qualifier("address3Qualifier")
 	public Address address3() {
 		var address = new Address("Moti Nager", "Hyderabad");
 		return address;
