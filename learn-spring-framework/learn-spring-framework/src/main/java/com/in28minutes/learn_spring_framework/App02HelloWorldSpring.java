@@ -1,5 +1,7 @@
 package com.in28minutes.learn_spring_framework;
 
+import java.util.Arrays;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class App02HelloWorldSpring {
@@ -23,8 +25,17 @@ public class App02HelloWorldSpring {
 		
 		System.out.println("address2: " + context.getBean("address2"));
 		
-		//	We can also retrieve a bean by specifying the class type instead of name
-//		Commenting this for now, otherwise an error will be thrown. Will come back to this later. 
-//		System.out.println(context.getBean(Address.class));
+		/*	We can also retrieve a bean by specifying the class type instead of name.
+		 * When you try to retrieve a Bean by type in Spring and there are multiple Beans of 
+		 * that type, Spring cannot determine which one you want, so it throws an exception 
+		 * to indicate this ambiguity. 
+		 * This emphasizes the importance of being specific when dealing with multiple Beans in the Spring context.
+		 * Therefore commenting the following line for now, we have address(or address2) and address3 of Address type.
+		System.out.println(context.getBean(Address.class));	
+		*/
+		
+		// Functional programming to print all the beans managed by the spring container.
+		System.out.println("All beans managed by spring container: ");
+		Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
 	}
 }
