@@ -1,6 +1,10 @@
 package com.in28minutes.learn_spring_framework.game;
 
+import org.springframework.stereotype.Component;
 
+// Such classes are considered as candidates for auto-detection 
+//when using annotation-based configuration and classpath scanning.
+@Component
 public class PacmanGame implements GamingConsole{
 	public void up() {
 		System.out.println("Up");
