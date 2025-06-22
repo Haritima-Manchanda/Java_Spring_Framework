@@ -19,7 +19,7 @@ public class GameRunner {
 	}
 	
 	public void run() {
-		System.out.println("Running Game: "+ this.game);
+		System.out.println("learn-spring-framework-02 running Game: "+ this.game);
 		game.up();
 		game.down();
 		game.left();
