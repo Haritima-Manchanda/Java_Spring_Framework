@@ -15,6 +15,9 @@ class YourBusinessClass{
 	Dependency1 dependency1;
 	Dependency2 dependency2;
 	
+	// Here @Autowired is optional (in case of Constructor Injection)
+	// Spring team recommends to use Constructor injection. Because all 
+	// initialization happens in the constructor.
 	@Autowired
 	public YourBusinessClass(Dependency1 dependency1, Dependency2 dependency2) {
 			super();
