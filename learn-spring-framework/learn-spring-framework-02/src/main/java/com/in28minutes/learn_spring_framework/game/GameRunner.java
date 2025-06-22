@@ -1,18 +1,9 @@
 package com.in28minutes.learn_spring_framework.game;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class GameRunner {
-
-//	MarioGame game;
-//	
-//	public GameRunner(MarioGame game) {
-//		this.game = game;
-//	}
-
-//	SuperContraGame game;
-//	public GameRunner(SuperContraGame game) {
-//		this.game = game;
-//	}
-	
 	GamingConsole game;
 	public GameRunner(GamingConsole game) {
 		this.game = game;
