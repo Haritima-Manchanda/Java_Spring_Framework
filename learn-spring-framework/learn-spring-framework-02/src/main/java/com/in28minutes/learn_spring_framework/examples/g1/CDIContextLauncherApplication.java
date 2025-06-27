@@ -6,7 +6,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-// These are CDI specifications. Alternatives to spring annotations.
+// These are CDI Jakarta specifications. Alternatives to spring annotations.
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 
